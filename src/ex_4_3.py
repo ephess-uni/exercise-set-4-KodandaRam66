@@ -1,5 +1,6 @@
 """ ex_4_3.py """
 import os
+from datetime import datetime, timedelta
 
 try:
     from src.ex_4_0 import get_shutdown_events
@@ -19,7 +20,11 @@ def time_between_shutdowns(logfile):
     """
     Your docstring here.  Replace the pass keyword below with your implementation.
     """
-    pass
+    sh_list = get_shutdown_events(logfile)
+    formatstr = "INFO %Y-%m-%dT%H:%M:%S supybot Shutdown initiated."
+    first = datetime.strptime(sh_list[0], formatstr)
+    last = datetime.strptime(sh_list[-1], formatstr)
+    return last - first
 
 
 # >>>> The code below will call your function and print the results
