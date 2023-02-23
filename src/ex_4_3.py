@@ -22,8 +22,8 @@ def time_between_shutdowns(logfile):
     """
     sh_list = get_shutdown_events(logfile)
     formatstr = "INFO %Y-%m-%dT%H:%M:%S"
-    first = datetime.strptime(sh_list[0], formatstr)
-    last = datetime.strptime(sh_list[-1], formatstr)
+    first = datetime.strptime(str(sh_list[0]), formatstr)
+    last = datetime.strptime(str(sh_list[-1]), formatstr)
     return last - timedelta(first)
 
 
