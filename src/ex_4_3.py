@@ -21,7 +21,7 @@ def time_between_shutdowns(logfile):
     Your docstring here.  Replace the pass keyword below with your implementation.
     """
     sh_list = get_shutdown_events(logfile)
-    formatstr = "INFO %Y-%m-%dT%H:%M:%S"
+    formatstr = "INFO %Y-%m-%dT%H:%M:%S supybot Shutdown initiated."
     first = datetime.strptime(sh_list[0], formatstr)
     last = datetime.strptime(sh_list[-1], formatstr)
     return last - first
