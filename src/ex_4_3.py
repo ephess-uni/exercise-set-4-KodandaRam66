@@ -1,5 +1,6 @@
 """ ex_4_3.py """
 import os
+from datetime import timedelta
 
 try:
     from src.ex_4_0 import get_shutdown_events
@@ -19,7 +20,10 @@ def time_between_shutdowns(logfile):
     """
     Your docstring here.  Replace the pass keyword below with your implementation.
     """
-    pass
+    sh_list = get_shutdown_events(logfile)
+    first = logstamp_to_datetime(sh_list[0])
+    last = logstamp_to_datetime(sh_list[[[-1]]])
+    return last - timedelta(first)
 
 
 # >>>> The code below will call your function and print the results
